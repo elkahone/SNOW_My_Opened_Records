@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">My Opened Records</h4>
+  </div>
+  <div class="panel-body m-b-n">
+    <div class="form-group">
+      <h4>Please choose record type:</h4>
+      <div class="list-group">
+        <a href="javascript:void(0)" class="list-group-item" ng-click="showInc()">Incident<span
+            class="badge">{{c.data.incidentNumb}}</span></a>
+        <a href="javascript:void(0)" class="list-group-item" ng-click="showRec()">Request<span
+            class="badge">{{c.data.requestNumb}}</span></a>
+      </div><br>
+    <div class="form-group">
+      <div class="list-group" id="tbl">
+      </div>
+      <div class="panel-footer" ng-if="c.amount > c.options.maximum_entries">
+        <h4 class="panel-title">${First {{c.options.maximum_entries}} of {{c.amount}} shown}</h4>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

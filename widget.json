@@ -1,0 +1,418 @@
+{
+    "instance": {
+        "name": "dev68993",
+        "url": "https://dev68993.service-now.com",
+        "g_ck": "03502fe9dbb20010eab89fd2ca9619f6e6660c7499ee519fe4b68d33d0224f9572ab1c8a"
+    },
+    "action": "saveWidget",
+    "tableName": "sp_widget",
+    "name": "My Open Tickets",
+    "sys_id": "7ff57a29db320010eab89fd2ca961982",
+    "widget": {
+        "template": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Body HTML template",
+            "sys_readonly": false,
+            "type": "html_template",
+            "mandatory": false,
+            "displayValue": "<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h4 class=\"panel-title\">My Opened Records</h4>\n  </div>\n  <div class=\"container\">\n    <div class=\"form-group\">\n      <h4>Please choose record type:</h4>\n      <div class=\"list-group\">\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showInc()\">Incident<span\n            class=\"badge\">{{c.data.incidentNumb}}</span></a>\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showRec()\">Request<span\n            class=\"badge\">{{c.data.requestNumb}}</span></a>\n      </div>\n    </div>\n    </div><br>\n    <div class=\"form-group\">\n      <div class=\"list-group\" id=\"tbl\">\n      </div>\n      <div class=\"panel-footer\" ng-if=\"c.amount > c.options.maximum_entries\">\n        <h4 class=\"panel-title\">${First {{c.options.maximum_entries}} of {{c.amount}} shown}</h4>\n      </div>\n    </div>\n  </div>\n</div>",
+            "readonly": false,
+            "hint": "",
+            "name": "template",
+            "attributes": {},
+            "choice": 0,
+            "value": "<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h4 class=\"panel-title\">My Opened Records</h4>\n  </div>\n  <div class=\"panel-body m-b-n\">\n    <div class=\"form-group\">\n      <h4>Please choose record type:</h4>\n      <div class=\"list-group\">\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showInc()\">Incident<span\n            class=\"badge\">{{c.data.incidentNumb}}</span></a>\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showRec()\">Request<span\n            class=\"badge\">{{c.data.requestNumb}}</span></a>\n      </div><br>\n    <div class=\"form-group\">\n      <div class=\"list-group\" id=\"tbl\">\n      </div>\n      <div class=\"panel-footer\" ng-if=\"c.amount > c.options.maximum_entries\">\n        <h4 class=\"panel-title\">${First {{c.options.maximum_entries}} of {{c.amount}} shown}</h4>\n      </div>\n    </div>\n    </div>\n  </div>\n</div>",
+            "max_length": 65000,
+            "ed": {
+                "name": "template"
+            }
+        },
+        "css": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "CSS",
+            "sys_readonly": false,
+            "type": "css",
+            "mandatory": false,
+            "displayValue": ".badge {\nbackground-color: green;\n}",
+            "readonly": false,
+            "hint": "",
+            "name": "css",
+            "attributes": {},
+            "choice": 0,
+            "value": ".badge {\nbackground-color: green;\n}",
+            "max_length": 8000,
+            "ed": {
+                "name": "css"
+            }
+        },
+        "roles": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "Roles",
+            "sys_readonly": false,
+            "type": "user_roles",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "roles",
+            "attributes": {
+                "no_truncate": "true",
+                "update_exempt": "true",
+                "record_watcher_blacklist": "true"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 255,
+            "ed": {
+                "name": "roles"
+            }
+        },
+        "link": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Link",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "function link(scope, element, attrs, controller) {\r\n  \r\n}",
+            "readonly": false,
+            "hint": "",
+            "name": "link",
+            "attributes": {
+                "client_script": "true"
+            },
+            "choice": 0,
+            "value": "function link(scope, element, attrs, controller) {\r\n  \r\n}",
+            "max_length": 65000,
+            "ed": {
+                "name": "link"
+            }
+        },
+        "description": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Description",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "Defines what the widget does",
+            "name": "description",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 300,
+            "ed": {
+                "name": "description"
+            }
+        },
+        "demo_data": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Demo data",
+            "sys_readonly": false,
+            "type": "json",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "demo_data",
+            "attributes": {},
+            "choice": 0,
+            "value": "",
+            "max_length": 8000,
+            "ed": {
+                "name": "demo_data"
+            }
+        },
+        "option_schema": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Option schema",
+            "sys_readonly": false,
+            "type": "json",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "option_schema",
+            "attributes": {},
+            "choice": 0,
+            "value": "",
+            "max_length": 8000,
+            "ed": {
+                "name": "option_schema"
+            }
+        },
+        "script": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Server script",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "(function () {\n\tif (!options.maximum_entries)\n\t\toptions.maximum_entries = 5;\n\n\tdata.requestNumb = \"\";\n\tdata.incidentNumb = \"\";\n\tdata.requests = [];\n\tdata.incidents = [];\n\n\tvar tables = [\"incident\", \"sc_request\"];\n\n\ttables.forEach(numberOfRecords);\n\ttables.forEach(detailsFromRecords);\n\n\tfunction numberOfRecords(item) {\n\t\tvar gr = new GlideAggregate(item);\n\t\tgr.addAggregate('COUNT');\n\t\tif (item == 'sc_request') {\n\t\t\tgr.addEncodedQuery('requested_for=javascript:gs.getUserID()');\n\t\t} else {\n\t\t\tgr.addEncodedQuery('caller_id=javascript:gs.getUserID()');\n\t\t}\n\t\tgr.addQuery('active', 'true');\n\t\tgr.query();\n\t\twhile (gr.next()) {\n\t\t\tswitch (item) {\n\t\t\t\tcase 'incident':\n\t\t\t\t\tdata.incidentNumb = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'sc_request':\n\t\t\t\t\tdata.requestNumb = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t}\n\n\t\t}\n\t}\n\n\tfunction detailsFromRecords(item) {\n\t\tvar gr = new GlideRecord(item);\n\t\tif (item == 'sc_request') {\n\t\t\tgr.addEncodedQuery('requested_for=javascript:gs.getUserID()');\n\t\t} else {\n\t\t\tgr.addEncodedQuery('caller_id=javascript:gs.getUserID()');\n\t\t}\n\t\tgr.addQuery('active', 'true');\n\t\tgr.query();\n\t\tvar incIdx = 0;\n\t\tvar reqIdx = 0;\n\t\twhile (gr.next()) {\n\t\t\tvar inc = {};\n\t\t\tvar req = {};\n\t\t\tswitch (item) {\n\t\t\t\tcase 'incident':\n\t\t\t\t\tif (incIdx == options.maximum_entries)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tinc.number = gr.getDisplayValue(\"number\");\n\t\t\t\t\tinc.short_description = gr.getDisplayValue(\"short_description\");\n\t\t\t\t\tinc.sys_id = gr.getUniqueValue();\n\t\t\t\t\tdata.incidents.push(inc);\n\t\t\t\t\tincIdx++;\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'sc_request':\n\t\t\t\t\tif (reqIdx == options.maximum_entries)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\treq.number = gr.getDisplayValue(\"number\");\n\t\t\t\t\tvar ritm = GlideRecord('sc_req_item');\n\t\t\t\t\tritm.addQuery('request', gr.getUniqueValue());\n\t\t\t\t\tritm.query();\n\t\t\t\t\tif(ritm.next()) {\n\t\t\t\t\t\treq.item = ritm.getDisplayValue(\"cat_item\");\n\t\t\t\t\t\treq.sys_id = ritm.getUniqueValue();\n\t\t\t\t\t}\n\t\t\t\t\tdata.requests.push(req);\n\t\t\t\t\treqIdx++;\n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n\n})();",
+            "readonly": false,
+            "hint": "",
+            "name": "script",
+            "attributes": {},
+            "choice": 0,
+            "value": "(function () {\n\tif (!options.maximum_entries)\n\t\toptions.maximum_entries = 5;\n\n\tdata.requestNumb = \"\";\n\tdata.incidentNumb = \"\";\n\tdata.requests = [];\n\tdata.incidents = [];\n\n\tvar tables = [\"incident\", \"sc_request\"];\n\n\ttables.forEach(numberOfRecords);\n\ttables.forEach(detailsFromRecords);\n\n\tfunction numberOfRecords(item) {\n\t\tvar gr = new GlideAggregate(item);\n\t\tgr.addAggregate('COUNT');\n\t\tif (item == 'sc_request') {\n\t\t\tgr.addEncodedQuery('requested_for=javascript:gs.getUserID()');\n\t\t} else {\n\t\t\tgr.addEncodedQuery('caller_id=javascript:gs.getUserID()');\n\t\t}\n\t\tgr.addQuery('active', 'true');\n\t\tgr.query();\n\t\twhile (gr.next()) {\n\t\t\tswitch (item) {\n\t\t\t\tcase 'incident':\n\t\t\t\t\tdata.incidentNumb = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'sc_request':\n\t\t\t\t\tdata.requestNumb = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t}\n\n\t\t}\n\t}\n\n\tfunction detailsFromRecords(item) {\n\t\tvar gr = new GlideRecord(item);\n\t\tif (item == 'sc_request') {\n\t\t\tgr.addEncodedQuery('requested_for=javascript:gs.getUserID()');\n\t\t} else {\n\t\t\tgr.addEncodedQuery('caller_id=javascript:gs.getUserID()');\n\t\t}\n\t\tgr.addQuery('active', 'true');\n\t\tgr.query();\n\t\tvar incIdx = 0;\n\t\tvar reqIdx = 0;\n\t\twhile (gr.next()) {\n\t\t\tvar inc = {};\n\t\t\tvar req = {};\n\t\t\tvar ritm = GlideRecord('sc_req_item');\n\t\t\tritm.addQuery('request', gr.getUniqueValue());\n\t\t\tritm.query();\n\t\t\twhile(ritm.next()) {\n\t\t\t\treq.item = ritm.getDisplayValue(\"cat_item\");\n\t\t  }\n\t\t\tswitch (item) {\n\t\t\t\tcase 'incident':\n\t\t\t\t\tif (incIdx == options.maximum_entries)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tinc.number = gr.getDisplayValue(\"number\");\n\t\t\t\t\tinc.short_description = gr.getDisplayValue(\"short_description\");\n\t\t\t\t\tinc.sys_id = gr.getUniqueValue();\n\t\t\t\t\tdata.incidents.push(inc);\n\t\t\t\t\tincIdx++;\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'sc_request':\n\t\t\t\t\tif (reqIdx == options.maximum_entries)\n\t\t\t\t\t\tbreak;\n\t\t\t\t\treq.number = gr.getDisplayValue(\"number\");\n\t\t\t\t\treq.sys_id = gr.getUniqueValue();\n\t\t\t\t\tdata.requests.push(req);\n\t\t\t\t\treqIdx++;\n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n\n})();",
+            "max_length": 65000,
+            "ed": {
+                "name": "script"
+            }
+        },
+        "has_preview": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -7,
+            "label": "Has preview",
+            "sys_readonly": false,
+            "type": "boolean",
+            "mandatory": false,
+            "displayValue": "true",
+            "readonly": false,
+            "hint": "Defines whether preview data is available",
+            "name": "has_preview",
+            "attributes": {},
+            "choice": 0,
+            "value": "true",
+            "max_length": 40,
+            "ed": {
+                "name": "has_preview"
+            }
+        },
+        "public": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -7,
+            "label": "Public",
+            "sys_readonly": false,
+            "type": "boolean",
+            "mandatory": false,
+            "displayValue": "true",
+            "readonly": false,
+            "hint": "Widget publicly available to unauthenticated users",
+            "name": "public",
+            "attributes": {
+                "update_exempt": "true"
+            },
+            "choice": 0,
+            "value": "true",
+            "max_length": 40,
+            "ed": {
+                "name": "public"
+            }
+        },
+        "docs": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "Docs",
+            "sys_readonly": false,
+            "type": "reference",
+            "mandatory": false,
+            "refTable": "sp_documentation",
+            "reference_type": "table",
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "docs",
+            "attributes": {
+                "encode_utf8": "false"
+            },
+            "reference_key": "sys_id",
+            "readonlyClickthrough": false,
+            "choice": 0,
+            "value": "",
+            "max_length": 32,
+            "ed": {
+                "reference": "sp_documentation",
+                "searchField": "title",
+                "defaultOperator": "STARTSWITH",
+                "name": "docs"
+            }
+        },
+        "client_script": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Client controller",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "function($scope) {\n  /* widget controller */\n  var c = this;\n\t//client controler send info that button clicked to the server side\n\t\n\t\n\t\n\t$scope.showRec = function()  {\n\t\tc.amount = c.data.requestNumb;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.requestNumb; i++) {\n\t\t\t\t\tc.number = $scope.data.requests[i].number;\n\t\t\t\t\tc.sys_id = $scope.data.requests[i].sys_id;\n\t\t\t\t\tc.item = $scope.data.requests[i].item;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+c.sys_id+\"&id=sc_request&table=sc_request' class='list-group-item'>\"+c.number+\"<span> • </span>\"+c.item+\"</a>\")\n\t\t}\t\n\t};\n\t\n\t$scope.showInc = function()  {\n\t\tc.amount = c.data.incidentNumb;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.incidentNumb; i++) {\n\t\t\t\t\tc.number = $scope.data.incidents[i].number;\n\t\t\t\t\tc.sys_id = $scope.data.incidents[i].sys_id;\n\t\t\t\t\tc.short_description = $scope.data.incidents[i].short_description;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+c.sys_id+\"&view=sp&id=ticket&table=incident' class='list-group-item'>\"+c.number+\"<span> • </span>\"+c.short_description+\"</a>\")\n\t\t}\t\n\t};\n\n}",
+            "readonly": false,
+            "hint": "",
+            "name": "client_script",
+            "attributes": {
+                "client_script": "true"
+            },
+            "choice": 0,
+            "value": "function($scope) {\n  /* widget controller */\n  var c = this;\n\t//client controler send info that button clicked to the server side\n\t\n\t\n\t\n\t$scope.showRec = function()  {\n\t\tc.amount = c.data.requestNumb;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.requestNumb; i++) {\n\t\t\t\t\tvar number = $scope.data.requests[i].number;\n\t\t\t\t\tvar sys = $scope.data.requests[i].sys_id;\n\t\t\t\t\tvar item = $scope.data.requests[i].item;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+sys+\"&id=sc_request&table=sc_request' class='list-group-item'>\"+number+\"<span> • </span>\"+item+\"</a>\")\n\t\t}\t\n\t};\n\t\n\t$scope.showInc = function()  {\n\t\tc.amount = c.data.incidentNumb;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.incidentNumb; i++) {\n\t\t\t\t\tvar number = $scope.data.incidents[i].number;\n\t\t\t\t\tvar sys = $scope.data.incidents[i].sys_id;\n\t\t\t\t\tvar shortDesc = $scope.data.incidents[i].short_description;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+sys+\"&view=sp&id=ticket&table=incident' class='list-group-item'>\"+number+\"<span> • </span>\"+shortDesc+\"</a>\")\n\t\t}\t\n\t};\n\n}",
+            "max_length": 8000,
+            "ed": {
+                "name": "client_script"
+            }
+        },
+        "data_table": {
+            "sys_mandatory": true,
+            "visible": true,
+            "dbType": 12,
+            "default_value": "sp_instance",
+            "label": "Data table",
+            "sys_readonly": false,
+            "type": "table_name",
+            "mandatory": true,
+            "displayValue": "sp_instance",
+            "readonly": false,
+            "hint": "",
+            "name": "data_table",
+            "attributes": {
+                "base_table": "sp_instance",
+                "base_start": "true"
+            },
+            "choice": 0,
+            "choices": [],
+            "value": "sp_instance",
+            "max_length": 80,
+            "ed": {
+                "name": "data_table"
+            }
+        },
+        "name": {
+            "sys_mandatory": true,
+            "visible": true,
+            "dbType": 12,
+            "label": "Name",
+            "sys_readonly": false,
+            "type": "translated_field",
+            "mandatory": true,
+            "displayValue": "My Open Tickets",
+            "readonly": false,
+            "hint": "",
+            "name": "name",
+            "attributes": {},
+            "choice": 0,
+            "value": "My Open Tickets",
+            "max_length": 40,
+            "ed": {
+                "name": "name"
+            }
+        },
+        "sys_scope": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "Application",
+            "sys_readonly": true,
+            "type": "reference",
+            "mandatory": false,
+            "refTable": "sys_scope",
+            "reference_type": "table",
+            "displayValue": "Global",
+            "readonly": true,
+            "hint": "Application containing this record",
+            "name": "sys_scope",
+            "attributes": {
+                "list_force_default": "true",
+                "readonly_clickthrough": "true",
+                "ignore_filter_on_new": "true"
+            },
+            "reference_key": "sys_id",
+            "readonlyClickthrough": true,
+            "choice": 0,
+            "value": "global",
+            "max_length": 32,
+            "ed": {
+                "reference": "sys_scope",
+                "searchField": "name",
+                "defaultOperator": "STARTSWITH",
+                "name": "sys_scope"
+            }
+        },
+        "id": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "ID",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "Identifier for $sp.embedWidget()",
+            "name": "id",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 40,
+            "ed": {
+                "name": "id"
+            }
+        },
+        "field_list": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dependentField": "data_table",
+            "dbType": -1,
+            "label": "Fields",
+            "sys_readonly": false,
+            "type": "field_list",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "field_list",
+            "attributes": {
+                "is_multi_text": "false"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 1000,
+            "ed": {
+                "dependent_value": "sp_instance",
+                "name": "field_list"
+            }
+        },
+        "controller_as": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "controllerAs",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "c",
+            "readonly": false,
+            "hint": "Identifier name for a reference to the controller in the directive's scope",
+            "name": "controller_as",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "c",
+            "max_length": 100,
+            "ed": {
+                "name": "controller_as"
+            }
+        }
+    }
+}
